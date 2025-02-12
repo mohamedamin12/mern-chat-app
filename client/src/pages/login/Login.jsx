@@ -32,7 +32,7 @@ const Login = () => {
               className='w-full input input-bordered h-10'
             />
           </div>
-          <Link to='/signup' className='text-sm  hover:underline hover:text-blue-600 mt-2 inline-block'>
+          <Link to={'/signup'} className='text-sm  hover:underline hover:text-blue-600 mt-2 inline-block'>
             {"Don't"} have an account?
           </Link>
 
