@@ -5,11 +5,11 @@ const connectToDB = require("./db/connectToDB.js");
 const authRoutes = require("./routes/auth.route.js");
 const userRoutes = require("./routes/user.route.js");
 const messageRoutes = require("./routes/message.route.js");
+const {app , server} = require("./socket/socket.js")
 
 
 dotenv.config();
 
-const app = express();
 const PORT = process.env.PORT || 5555;
 
 //* Middleware to parse JSON request bodies
@@ -23,7 +23,7 @@ app.use("/api/users", userRoutes);
 app.use("/api/messages", messageRoutes);
 
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   connectToDB()
   console.log(`Server is running on port ${PORT}`);
 });
